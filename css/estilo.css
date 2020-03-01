@@ -1,0 +1,228 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+
+@font-face {
+	font-family: 'FonteLogo';
+	src: url("../fonts/bubblegum-sans-regular.otf");/*"../"é para ir para uma pasta anterior*/
+}
+body {
+	font-family: Arial, sans-serif;
+	background-color: #dddddd;
+	color: rgba(0,0,0,1);
+	}
+div#interface {
+	width: 98%;
+	background-color: #ffffff;
+	margin: -20px auto 10px auto ;/*sentido=relógio*/
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+	padding: 10px;/* se os valores forem todos iguais, basta um valor */
+	}
+
+p{
+	text-align: justify;
+	text-indent:50px;
+	}
+	a {
+		color: #606060;
+		text-decoration: none;
+		}
+	a:hover {
+		text-decoration: underline;
+	}
+header#cabecalho img#icone {
+	position: absolute;
+	left:650px;
+	top: 80px;
+}
+header#cabecalho {
+	border-bottom: 1px #606060 solid;
+	height: 150px;
+	background: url("../imagens/glass-logo-peq.jpg")no-repeat 0px 80px;
+
+}
+header#cabecalho h1 {
+	font-family: 'FonteLogo', sans-serif;
+	font-size: 30pt;
+	color: #606060; /* cinzento claro*/
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+	padding: 0px; /* padding é o espaço interno */
+	margin-bottom: 0px /* margin é o espaço externo*/
+}
+header#cabecalho h2 {
+	font-family:'Titillium Web', sans-serif;;
+	font-size: 15pt;
+	color: #888888;
+	padding: 0px;
+	margin-top: 0px;
+}
+	/*Formatação de imagens com legendas*/
+	figure.foto-legenda {
+		position: relative;
+		border:8px solid white;
+		box-shadow:1px 1px 4px black ;
+	}
+	figure.foto-legenda img{
+		width: 100%;
+		height: 70%;
+	}
+	figure.foto-legenda figcaption{
+		opacity: 0;/* fiz desaparecer a legenda para fazer um efeito
+		 especial de transição*/
+		position: absolute;
+		top: 0px;
+		background-color: rgba(0,0,0,0.4);
+		color: white;/*letra branca*/
+		width: 100%;
+		height: 100%;
+		padding: 10px; /* aumenta o espaço
+		interno da cx sombra. Empurrou a sombra para fora */
+		box-sizing: border-box;/*cria um box dentro da
+		borda aprisionando a cx sombra */
+		transition:opacity 1s;/*aqui está o efeito especial*/
+	}
+
+figure.foto-legenda:hover figcaption{/*o efeito especial com o cursor do rato*/
+		opacity: 1;
+	}
+/************** FORMATAÇÃO DO MENU ************************/
+nav#menu {
+	display: block;/*m bloco pode flutuar sobre a tela*/
+}
+nav#menu ul { /*ul-unordered list*/
+	list-style: none;
+	text-transform: uppercase; /*transforma em maíusculas */
+	position: absolute; /*relative fica a flutuar dentro do container,
+	absolut vai flutuar pela pág do site*/
+	top: 10px;
+	left: 400px;
+}
+nav#menu li { /*formatação para cada um dos itens da lista*/
+	display: inline-block;/*itens alinhados*/
+	background-color: #dddddd;
+	padding: 10px;
+	margin: 2px;/*espaço entre as cxs de texto*/
+	/* usado o site tipo 'prefixer' para ser mais compatível com browsers antigos (ver aula14) */
+	-webkit-transition:background-color 1s;
+	-moz-transition:background-color 1s;
+	-o-transition:background-color 1s;
+	-ms-transition:background-color 1s;
+	/*fim do prefixer */
+	transition:background-color 1s;
+}
+nav#menu li:hover{
+	background-color: rgba(0, 0, 0, 0.4);/*escurece os itens qdo passo o mouse*/
+}
+nav#menu h1 {
+	display: none;/*escondi o menu principal que está no index*/
+}
+
+nav#menu a {
+	color: #000000;
+	text-decoration: none;/*tirar o sublinhado dos itens links*/
+}
+nav#menu a:hover {
+	color: #ffffff;
+	text-decoration: underline;/*fazer aparecer sublinhado nos itens
+	 link qdo passamos o mouse*/
+}
+
+section#corpo {
+	display: block;
+	width:70%;
+	float: left;
+	border-right: 1px solid #606060;
+	padding-right: 10px;
+}
+article#noticia-principal h2 {
+	font-size: 13pt;
+	color: #606060;
+	background-color: #dddddd;
+	padding: 5px 0px 5px 10px;
+	margin: 10px 0px 10px 0px;
+}
+header#cabecalho-artigo h1 {
+	font-family: 'Fontelogo',sans-serif;
+	font-size: 20pt;
+	color: #606060;
+	margin-bottom: 0px;
+}
+
+.direita {
+	text-align: right;
+}
+header#cabecalho-artigo h2 {
+	font-size: 13pt;
+	color:#cecece;
+	background-color: #ffffff;
+	margin: 0px;
+}
+header#cabecalho-artigo h3 {
+	font-size: 12pt;
+	color: #606060;
+	margin-top: 10px;
+
+}
+table#tabelaspec {
+		border: 1px solid #606060;
+		border-spacing: 0px; /*para tirar os epaços*/
+		margin-left: auto;
+		margin-right: auto;
+}
+table#tabelaspec td {
+	border: 1px solid #606060;/*linhas dos dados da tabela*/
+	padding: 10px;
+	text-align: center;
+	vertical-align: middle;
+	}
+table#tabelaspec td.ce {
+	color: #ffffff;
+	background-color: #606060;
+	vertical-align: top;
+	font-weight: bold;
+	}
+table#tabelaspec td.cd {
+background-color: #cecece;
+}
+table#tabelaspec caption {
+	color: #888888;
+	font-size: 13pt;
+	font-weight: bolder;
+}
+table#tabelaspec caption span { /* formatar Mar/2013*/
+	display: block;
+	float: right;
+	color: #000000;
+	font-size: 8pt;
+	margin-top: 10px;
+}
+aside#lateral {
+		display: block;
+		width:27%;
+		float: right;
+		background-color: #dddddd;
+		padding:10px;
+		margin-top: 20px;
+		box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+		}
+aside#lateral h1{
+font-family: 'Fontelogo',sans-serif;
+font-size: 20pt;
+color: #606060;
+margin-top: 0px;
+}
+aside#lateral h2{
+background-color: #606060;
+font-size: 13pt;
+color: #ffffff;
+padding: 5px;
+}
+
+footer#rodape {
+		clear: both;
+		border-top: 1px solid #606060;
+		text-align: center;
+	}
+footer#rodape p {
+		text-align: center;
+			}
